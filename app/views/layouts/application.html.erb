@@ -18,17 +18,49 @@
         
         <nav>
           <ul class="nav navbar-nav navbar-right" style="list-style: none;">
-            <!-- if文で分岐 -->
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to root_path do %>
+                  <span class="glyphicon glyphicon-home"> Home</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to users_path do %>
+                  <span class="glyphicon glyphicon-user"> Users</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to books_path do %>
+                  <span class="glyphicon glyphicon-book"> Books</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path do %>
+                  <span class="glyphicon glyphicon-log-out"> logout</span>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to root_path do %>
+                  <span class="glyphicon glyphicon-home"> Home</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to about_path do %>
+                  <span class="glyphicon glyphicon-link"> About</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path do %>
+                  <span class="glyphicon glyphicon-edit"> sign up</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <span class="glyphicon glyphicon-log-in"> login</span>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </nav>
 
