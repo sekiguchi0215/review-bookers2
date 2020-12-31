@@ -1,5 +1,5 @@
 <div class="col-xs-3">
-	<h2>UserInfo</h2>
+	<h2 style="width: 250px">User info</h2>
 	<table class="table">
 		<tbody>
 			<tr>
@@ -16,16 +16,22 @@
 		</tbody>
 	</table>
 	<div class="row">
-		
+		<%= link_to edit_user_path(current_user.id) do %>
+			<span class="btn btn-default glyphicon glyphicon-wrench" aria-hidden="true" style="width: 250px"></span>
+		<% end %>
 	</div>
-	<h2>New Book</h2>
+	<h2 style="width: 250px">New Book</h2>
+	<% @book = Book.new %>
+
+	<%= render "books/error", wild: @book %>
+
 	<%= form_for(@book) do |f| %>
 		<h4>Title</h4>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, style: "width: 250px" %>
 
 		<h4>Opinion</h4>
-		<%= f.text_area :body %>
+		<%= f.text_area :body, style: "width: 250px" %>
 
-		<%= f.submit "Create Book" %>
+		<%= f.submit "Create Book", class: "btn btn-primary", style: "width: 250px" %>
 	<% end %>
 </div>

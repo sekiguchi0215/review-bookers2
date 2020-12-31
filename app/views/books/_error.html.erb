@@ -1,0 +1,8 @@
+<% if wild.errors.any? %>
+	<h2><%= wild.errors.count %> error prohibited this book from being seved:</h2>
+	<ul style="list-style: none;">
+		<% wild.erros.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+	</ul>
+<% end %>
