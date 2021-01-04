@@ -21,11 +21,11 @@
 		<% end %>
 	</div>
 	<h2 style="width: 250px">New Book</h2>
-	<% @book = Book.new %>
+	<% @new_book = Book.new %>
 
-	<%= render "books/error", wild: @book %>
+	<%= render "books/error", wild: @new_book %>
 
-	<%= form_for(@book) do |f| %>
+	<%= form_for(@new_book) do |f| %>
 		<h4>Title</h4>
 		<%= f.text_field :title, style: "width: 250px" %>
 
