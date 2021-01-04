@@ -1,5 +1,8 @@
 <div class="row">
 	<h2>User info</h2>
+	<div class="error-message">
+		<%= render "books/error", wild: @user %>
+	</div>
 	<div class="form-body">
 		<%= form_for(@user) do |f| %>
 		<div class="field">
